@@ -1,0 +1,48 @@
+img {
+    border: 2px solid rgb(0, 0, 0);
+}
+
+p {
+    max-width: 300px;
+    margin: auto;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#innpakning {
+    font-family: sans-serif;
+    margin: auto;
+    max-width: 1000px;
+    min-width: 420px;
+    border: solid 2px black;
+}
+
+.divContent {
+    border: solid 2px black;
+    margin: 10px;
+    text-align: center;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    border: solid 2px black;
+    padding: 10px;
+    margin: 5px 10px 5px 10px;
+    flex-grow: 1;
+}
+
+.namecard {
+    display: flex;
+    margin: auto;
+    padding: 50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
