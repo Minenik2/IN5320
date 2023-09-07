@@ -1,0 +1,37 @@
+li {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+li button {
+    background-color: pink;
+    margin-left: 15px;
+    margin-top: 5px;
+    border: none;
+    padding: 12px;
+}
+
+li button:hover {
+    background-color: red;
+}
+
+#countryInput {
+    width: 200px;
+    height: 30px;
+}
+
+#countryButton {
+    width: 100px;
+    height: 40px;
+}
+
+#search {
+    width: 305px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.outline {
+    border: 5px dashed slategrey;
+    padding: 15px;
+}
