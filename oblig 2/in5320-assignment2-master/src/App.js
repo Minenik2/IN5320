@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     // All parameters are appended to this URL.
-    let apiQuery = "https://dhis2-app-course-api.ifi.uio.no/api?";
+    let apiQuery = "https://dhis2-app-course.ifi.uio.no/api?";
 
     // If searchQuery isn't empty add &search=searchQuery to the API request.
     if (searchQuery) {
