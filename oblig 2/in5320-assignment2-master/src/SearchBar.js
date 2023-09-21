@@ -1,6 +1,7 @@
+// oppgave 2 search component
 import React, { useState } from "react";
 
-function SearchBar({ searchQuery, setSearchQuery, handleSearch }) {
+function SearchBar({handleSearch}) {
     const [countryName, setCountryName] = useState('');
 
     function handleSubmit(e) {

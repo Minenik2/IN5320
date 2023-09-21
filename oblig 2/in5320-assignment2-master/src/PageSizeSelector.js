@@ -1,4 +1,4 @@
-// PageComponent.js
+// oppgave 3 page size component
 import React from "react";
 
 function PageSizeSelector({ pageSize, setPageSize }) {

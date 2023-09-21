@@ -1,20 +1,22 @@
-// Pagination.js
+// oppgave 4 pagination component
 import React from "react";
 
 function Pagination({ currentPage, totalPages, onNext, onPrev }) {
-    console.log(currentPage)
-    if (!currentPage.results) {
+    // her for å få tak i pageCount så tar jeg med meg API objektet 
+    // jeg er usikker på hvordan man eller hadde gjort det uten å lage mer useState()
+    if (!totalPages.results) {
         // If the API request isn't completed return "loading...""
         return <p>Loading...</p>;
     } else {
         return (
             <div className="pagination">
-            {currentPage.pager.page > 1 && (
+                Page {currentPage} of {totalPages.pager.pageCount} 
+            {currentPage > 1 && (
                 <button onClick={onPrev} className="prev-button">
                 Previous
                 </button>
             )}
-            {currentPage.pager.page < totalPages.pager.pageCount && (
+            {currentPage < totalPages.pager.pageCount && (
                 <button onClick={onNext} className="next-button">
                 Next
                 </button>

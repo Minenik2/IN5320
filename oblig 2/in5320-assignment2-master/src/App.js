@@ -15,7 +15,7 @@ function App() {
   const [apiData, setApiData] = useState([]);
   const [searchQuery, setSearchQuery] = useState(); // Default = No search query
   const [pageNumber, setPageNumber] = useState(1); //Default = Page 1
-  const [pageSize, setPageSize] = useState(10) // task 3 initalize with 10 pages
+  const [pageSize, setPageSize] = useState(10) // oppgave 3 starter med 10 pages
 
   useEffect(() => {
     // All parameters are appended to this URL.
@@ -42,19 +42,22 @@ function App() {
       });
   }, [searchQuery, pageNumber, pageSize]); // Array containing which state changes that should re-reun useEffect()
 
+  // funksjonen for oppgave 2 search component
   const handleSearch = (countryName) => {
     setSearchQuery(countryName)
   };
 
+  // funksjonen for oppgave 4 pagination component
   const handleNextPage = () => {
-    if (apiData.pager.page < apiData.pager.pageCount) {
-      setPageNumber(apiData.pager.page + 1);
+    if (pageNumber < apiData.pager.pageCount) {
+      setPageNumber(pageNumber + 1);
     }
   };
 
+  // funksjonen for oppgave 4 pagination component
   const handlePrevPage = () => {
-    if (apiData.pager.page > 1) {
-      setPageNumber(apiData.pager.page - 1);
+    if (pageNumber > 1) {
+      setPageNumber(pageNumber - 1);
     }
   };
   
@@ -64,8 +67,6 @@ function App() {
       <h1>Country lookup</h1>
       <Table apiData={apiData} />
       <SearchBar
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
         handleSearch={handleSearch}
       />
       <PageSizeSelector
@@ -73,7 +74,7 @@ function App() {
         setPageSize={setPageSize}
       />
       <Pagination
-        currentPage={apiData}
+        currentPage={pageNumber}
         totalPages={apiData}
         onNext={handleNextPage}
         onPrev={handlePrevPage}
