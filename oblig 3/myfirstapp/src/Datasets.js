@@ -3,6 +3,7 @@ import { Menu } from "@dhis2-ui/menu";
 import { MenuItem } from "@dhis2-ui/menu";
 import { useDataQuery } from "@dhis2/app-runtime";
 import { useState } from "react";
+import { CircularLoader } from "@dhis2/ui";
 
 import {
   Table,
@@ -26,7 +27,7 @@ const getTable = (liste) => {
       <TableHead>
         <TableRowHead>
           <TableCellHead>Display Name</TableCellHead>
-          <TableCellHead>Value</TableCellHead>
+          <TableCellHead>Created</TableCellHead>
           <TableCellHead>ID</TableCellHead>
         </TableRowHead>
       </TableHead>
@@ -109,6 +110,7 @@ export function Datasets() {
         </main>
       );
     }
+    return <CircularLoader large />;
   };
   // end of fetch data
 

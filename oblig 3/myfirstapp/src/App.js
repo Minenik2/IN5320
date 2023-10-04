@@ -14,8 +14,6 @@ function MyApp() {
     setActivePage(page);
   }
 
-  
-
   return (
     <div className={classes.container}>
       <div className={classes.left}>
