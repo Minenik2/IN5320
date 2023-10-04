@@ -15,7 +15,7 @@ import {
   TableRowHead,
 } from "@dhis2/ui";
 
-// lager en funskjon som printer ut en table basert på api dataen den får med seg, 
+// lager en funskjon som printer ut en table basert på api dataen den får med seg,
 // brukes sammen med useState activeTable
 const getTable = (liste) => {
   if (liste === null) {
@@ -69,20 +69,44 @@ export function Datasets() {
     if (data) {
       console.log("API response:", data);
       //To-do: return a component using the data response
+      // returnerer en komponent som ligner side bar menu i dhis2 storybook
       return (
-        <>
-          <h1>Datasets worked</h1>
-          <Menu>
-            {data.request0.dataSets.map((liste, index) => (
-              <MenuItem
-                key={liste.id}
-                onClick={() => setActiveTable(index)}
-                label={liste.displayName}
-              />
-            ))}
-          </Menu>
-          {getTable(data.request0.dataSets[activeTable])}
-        </>
+        <main
+          style={{
+            border: "1px solid grey",
+            display: "flex",
+            height: "100%",
+          }}
+        >
+          <aside
+            style={{
+              flexGrow: 0,
+              height: "100%",
+              width: 300,
+            }}
+          >
+            <Menu>
+              {data.request0.dataSets.map((liste, index) => (
+                <MenuItem
+                  key={liste.id}
+                  onClick={() => setActiveTable(index)}
+                  label={liste.displayName}
+                />
+              ))}
+            </Menu>
+          </aside>
+          <section
+            style={{
+              backgroundColor: "#f3ffff",
+              borderLeft: "1px solid grey",
+              flexGrow: 1,
+              padding: 20,
+            }}
+          >
+            <h1>Datasets</h1>
+            {getTable(data.request0.dataSets[activeTable])}
+          </section>
+        </main>
       );
     }
   };
